@@ -6,7 +6,7 @@ import { History } from "../components/History";
 
 export function LandingPage() {
   return (
-    <div className="landing-page flex">
+    <div className="landing-page flex bg-red-400 w-full">
       <Sidebar />
       <Bio />
     </div>
