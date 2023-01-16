@@ -6,6 +6,7 @@ export function History() {
         <p className="sidebar__description">
           I'm a web developer based in New York City.
         </p>
+        <div></div>
       </div>
     </div>
   );
