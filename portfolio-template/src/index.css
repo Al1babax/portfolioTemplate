@@ -9,4 +9,7 @@
     .font-outline-4 {
       -webkit-text-stroke: 4px rgb(239 68 68);
     }
+    .font-outline-6 {
+      -webkit-text-stroke: 4px rgba(0, 0, 0, 0.179);
+    }
   }
