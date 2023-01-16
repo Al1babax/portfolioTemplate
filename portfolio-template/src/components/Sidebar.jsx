@@ -29,17 +29,17 @@ export function Sidebar() {
   // Handle the scrolling of the page to change the page number
   function handleScroll() {
     setYscroll(window.scrollY);
-    if (yscroll > 0 && yscroll < 500) {
+    if (yscroll > 0 && yscroll < 960) {
       setPageNumber(1);
-    } else if (yscroll > 500 && yscroll < 1000) {
+    } else if (yscroll > 960 && yscroll < 960*2) {
       setPageNumber(2);
-    } else if (yscroll > 1000 && yscroll < 1500) {
+    } else if (yscroll > 960*2 && yscroll < 960*3) {
       setPageNumber(3);
-    } else if (yscroll > 1500 && yscroll < 2000) {
+    } else if (yscroll > 960*3 && yscroll < 960*4) {
       setPageNumber(4);
-    } else if (yscroll > 2000 && yscroll < 2500) {
+    } else if (yscroll > 960*4 && yscroll < 960*5) {
       setPageNumber(5);
-    } else if (yscroll > 2500 && yscroll < 3000) {
+    } else if (yscroll > 960*5 && yscroll < 960*6) {
       setPageNumber(6);
     }
   }
@@ -65,7 +65,7 @@ export function Sidebar() {
   // Logging states for debugging
   //console.log("screenWidth: ", screenWidth);
   //console.log("screenHeight: ", screenHeight);
-  // console.log("yscroll: ", yscroll);
+  console.log("yscroll: ", yscroll);
   // console.log("pageNumber: ", pageNumber);
   // console.log("pageNumberPosition: ", pageNumberPosition);
 
@@ -89,7 +89,7 @@ export function Sidebar() {
           ></div>
         </button>
       </div>
-      <div className="otherStuff bg-red-0 h-full w-[65%] mx-auto my-20">
+      <div className="otherStuff bg-red-0 h-4/5 w-[65%] mx-auto mt-20">
         <div className="pageNumber flex gap-2 items-center font-bold">
           <p className={`text-red-400 ${pageNumberPosition ? "-translate-x-1" : ""} duration-200 ease-in-out`}>0{pageNumber}</p>
           <div className="line h-1 w-28 bg-white rounded"></div>

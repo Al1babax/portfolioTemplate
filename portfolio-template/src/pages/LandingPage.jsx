@@ -6,9 +6,14 @@ import { History } from "../components/History";
 
 export function LandingPage() {
   return (
-    <div className="landing-page flex bg-red-400 w-full h-[2500px]">
+    <div className="landing-page flex bg-red-400 w-full">
       <Sidebar />
-      <Bio />
+      <div className="content w-full">
+        <Bio />
+        <Projects />
+        <History />
+        <Contact />
+      </div>
     </div>
   );
 }

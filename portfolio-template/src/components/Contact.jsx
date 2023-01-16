@@ -1,6 +1,6 @@
 export function Contact() {
   return (
-    <div className="sidebar">
+    <div className="sidebar w-full bg-green-400 h-[960px]">
       <div className="sidebar__content">
         <h1 className="sidebar__title">John Doe</h1>
         <p className="sidebar__description">
