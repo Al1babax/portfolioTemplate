@@ -1,10 +1,25 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useRef } from "react";
 
 export function Menu(props) {
     const { menuOpen, setMenuOpen } = props;
 
+    const homeRef = useRef(null);
+    const projectsRef = useRef(null);
+    const experienceRef = useRef(null);
+    const contactRef = useRef(null);
+
     const [hoverLink, setHoverLink] = useState([false, false, false, false]);
+
+    // Scroll to element using refs
+    function scrollToElement(pixels) {
+        window.scrollTo({
+            top: pixels,
+            left: 0,
+            behavior: "smooth",
+        });
+    }
 
     function closeMenu() {
         setMenuOpen(!menuOpen);
@@ -23,28 +38,32 @@ export function Menu(props) {
                     <p className="text-4xl">x</p>
                 </button>
                 <div className="links2 bg-red-0 flex flex-col gap-8 text-3xl font-bold tracking-tight my-60 pl-20">
-                    <button onMouseEnter={() => handleHoverLink(0)} onMouseLeave={() => handleHoverLink(0)} className="bg-green-0">
+                    <button
+                        onMouseEnter={() => handleHoverLink(0)}
+                        onMouseLeave={() => handleHoverLink(0)}
+                        className="bg-green-0"
+                        onClick={() => scrollToElement(0)}>
                         <p className="flex flex-col items-center relative">
                             Home
                             {hoverLink[0] && <div className="bar w-24 h-4 bg-black opacity-20 -bottom-1 -z-10 absolute"></div>}
                         </p>
                     </button>
-                    <button onMouseEnter={() => handleHoverLink(1)} onMouseLeave={() => handleHoverLink(1)}>
+                    <button onMouseEnter={() => handleHoverLink(1)} onMouseLeave={() => handleHoverLink(1)} onClick={() => scrollToElement(960)}>
                         <p className="flex flex-col items-center relative">
                             Projects
-                            {hoverLink[1] && <div className="bar w-24 h-4 bg-black opacity-20 -bottom-1 -z-10 absolute"></div>}
+                            {hoverLink[1] && <div className="bar w-[120px] h-4 bg-black opacity-20 -bottom-1 -z-10 absolute"></div>}
                         </p>
                     </button>
-                    <button onMouseEnter={() => handleHoverLink(2)} onMouseLeave={() => handleHoverLink(2)}>
+                    <button onMouseEnter={() => handleHoverLink(2)} onMouseLeave={() => handleHoverLink(2)}onClick={() => scrollToElement(960*2)}>
                         <p className="flex flex-col items-center relative">
                             Experience
-                            {hoverLink[2] && <div className="bar w-24 h-4 bg-black opacity-20 -bottom-1 -z-10 absolute"></div>}
+                            {hoverLink[2] && <div className="bar w-[170px] h-4 bg-black opacity-20 -bottom-1 -z-10 absolute"></div>}
                         </p>
                     </button>
-                    <button onMouseEnter={() => handleHoverLink(3)} onMouseLeave={() => handleHoverLink(3)}>
+                    <button onMouseEnter={() => handleHoverLink(3)} onMouseLeave={() => handleHoverLink(3)}onClick={() => scrollToElement(960*3)}>
                         <p className="flex flex-col items-center relative">
                             Contact
-                            {hoverLink[3] && <div className="bar w-24 h-4 bg-black opacity-20 -bottom-1 -z-10 absolute"></div>}
+                            {hoverLink[3] && <div className="bar w-[120px] h-4 bg-black opacity-20 -bottom-1 -z-10 absolute"></div>}
                         </p>
                     </button>
                 </div>
