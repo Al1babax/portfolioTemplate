@@ -1,25 +1,7 @@
 import { useState } from "react";
-import { Timeline } from "../modals/Timeline.jsx";
 
 
 export function Contact() {
-
-  const timeLineData = {
-    1: {
-      id: 0,
-      year: "2020",
-      yearGap: "2015-2020",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque nunc fames.",
-      isLast: false,
-    },
-    2: {
-      id: 1,
-      year: "2019",
-      yearGap: "2015-2020",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque nunc fames.",
-      isLast: true,
-    },
-  }
 
   const [message, setMessage] = useState({
     name: "",
@@ -29,22 +11,6 @@ export function Contact() {
   });
 
   // Going to handle sending message using emailJS later
-
-
-  // creating timeline components
-  let timeLineHTML = [];
-  for (let i = 1; i <= Object.keys(timeLineData).length; i++) {
-    timeLineHTML.push(
-      <Timeline
-        key={i}
-        id={timeLineData[i].id}
-        year={timeLineData[i].year}
-        yearGap={timeLineData[i].yearGap}
-        text={timeLineData[i].text}
-        isLast={timeLineData[i].isLast}
-      />
-    );
-  }
 
 
   return (
@@ -115,9 +81,6 @@ export function Contact() {
             Send Message
           </button>
         </form>
-      </div>
-      <div className="div flex flex-col">
-        {timeLineHTML}
       </div>
     </div>
   );
