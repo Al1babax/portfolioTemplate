@@ -110,7 +110,7 @@ export function Sidebar() {
         <div className="pageNumber flex gap-2 items-center font-bold">
           <p className={`${menuOpen ? "text-black opacity-20" : "text-red-400"} ${pageNumberPosition ? "-translate-x-1" : ""} duration-200 ease-in-out z-50`}>0{pageNumber}</p>
           <div className="line h-1 w-28 bg-white rounded z-50"></div>
-          <p className="text-white z-50">06</p>
+          <p className="text-white z-50">04</p>
         </div>
         <div className="info mt-24">
           <p className={infoTitleCSS}>NAME</p>
