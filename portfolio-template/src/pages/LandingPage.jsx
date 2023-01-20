@@ -7,7 +7,7 @@ import { Projects2 } from "../components/Projects2"
 
 export function LandingPage() {
   return (
-    <div className="landing-page flex bg-red-400 w-full">
+    <div className="landing-page flex bg-red-0 w-full">
       <Sidebar />
       <div className="content w-full">
         <Bio />

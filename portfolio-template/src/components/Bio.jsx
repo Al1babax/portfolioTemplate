@@ -3,7 +3,7 @@ export function Bio() {
   const socialClasses = "hover:text-stone-400 hover:scale-105 duration-300 ease-in-out flex justify-center items-center px-3 py-1 rounded-md border-0 border-red-50 hover:border-red-300";
 
   return (
-    <div className="Bio bg-red-50 w-full flex h-screen">
+    <div className="Bio bg-red-100 bg-opacity-[30%] w-full flex h-screen">
       <div className="info bg-red-0 w-[750px] flex flex-col gap-16 justify-center px-10 text-xl">
         <div className="hello bg-sky-0">
           <p className="text-stone-600 text-3xl">Hello. My name is</p>
