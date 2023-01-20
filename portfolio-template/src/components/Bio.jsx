@@ -1,3 +1,5 @@
+import front_test from "../resources/images/front_test.jpeg";
+
 export function Bio() {
 
   const socialClasses = "hover:text-stone-400 hover:scale-105 duration-300 ease-in-out flex justify-center items-center px-3 py-1 rounded-md border-0 border-red-50 hover:border-red-300";
@@ -26,8 +28,8 @@ export function Bio() {
           </a>
         </div>
       </div>
-      <div className="photo bg-slate-400 w-full">
-          <p>Joku kuva</p>
+      <div className="photo bg-slate-400 w-full h-full">
+          <img src={front_test} alt="" className="h-full"/>
       </div>
     </div>
   );
