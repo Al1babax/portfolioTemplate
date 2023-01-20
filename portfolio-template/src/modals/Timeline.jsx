@@ -21,7 +21,7 @@ export function Timeline(props) {
             onMouseLeave={() => handleMouseLeave(id)}
         >
             <div className="div viivat flex gap-5 justify-center items-center w-1/4 bg-blue-0">
-                <p className={`text-red-500 font-sans ${isColored ? "-translate-x-4 text-xl -mr-2" : ""}  duration-300`}>{year}</p>
+                <p className={`text-red-500 ${isColored ? "-translate-x-4 text-xl -mr-2" : ""}  duration-300`}>{year}</p>
                 <div className={`ball w-10 h-10 border-4 border-red-500 rounded-[200px] relative flex items-center justify-center ${isColored ? "" : ""} duration-0`}>
                     <div className={`"smallball absolute w-5 h-5 ${isColored ? "bg-red-700" : ""} rounded-[200px] duration-300"`}>
                     </div>
@@ -29,8 +29,8 @@ export function Timeline(props) {
                 </div>
             </div>
             <div className="text flex gap-3 items-center w-3/4">
-                <p className={`"pl-8 font-serif ${isColored ? "text-white" : ""} duration-300`}>{yearGap}</p>
-                <p className={`"pl-8 font-serif ${isColored ? "text-white" : ""} duration-300`}>{text}</p>
+                <p className={`"pl-8  ${isColored ? "text-white" : ""} duration-300`}>{yearGap}</p>
+                <p className={`"pl-8  ${isColored ? "text-white" : ""} duration-300`}>{text}</p>
             </div>
         </div>
     );
