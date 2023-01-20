@@ -32,7 +32,7 @@ export function Menu(props) {
     }
 
     return (
-        <div className={`menu w-full h-full bg-red-400 absolute top-0 z-10 ${menuOpen ? "left-0" : "-left-[470px]"} duration-1000 ease-in-out`}>
+        <div className={`menu w-full h-full bg-gradient-to-t from-neutral-800 via-neutral-600 to-red-500  absolute top-0 z-10 ${menuOpen ? "left-0" : "-left-[470px]"} duration-1000 ease-in-out`}>
             <div className="links bg-green-0 w-3/4 h-3/4 text-white">
                 <button className="mt-4 mx-10" onClick={closeMenu}>
                     <p className="text-4xl">x</p>

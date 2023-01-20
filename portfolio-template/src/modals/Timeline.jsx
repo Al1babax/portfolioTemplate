@@ -16,14 +16,14 @@ export function Timeline(props) {
     console.log(year, yearGap, text, isLast);
     return (
 
-        <div className="timeline flex gap-5 justify-center items-center w-[600px] h-[180px]"
+        <div className="timeline flex gap-5 justify-center items-center w-[700px] h-[180px]"
             onMouseEnter={() => handleMouseEnter(id)}
             onMouseLeave={() => handleMouseLeave(id)}
         >
-            <div className="div viivat flex gap-5 justify-center items-center w-1/4">
-                <p className={`text-red-500 font-sans ${isColored ? "-translate-x-4 text-xl" : ""} hover:-translate-x-4 duration-300`}>{year}</p>
-                <div className="bal w-10 h-10 border-4 border-red-500 rounded-[200px] relative flex items-center justify-center">
-                    <div className={`"smallball absolute w-5 h-5 bg-red-500 ${isColored ? "bg-red-700" : ""} rounded-[200px] duration-300"`}>
+            <div className="div viivat flex gap-5 justify-center items-center w-1/4 bg-blue-0">
+                <p className={`text-red-500 font-sans ${isColored ? "-translate-x-4 text-xl -mr-2" : ""}  duration-300`}>{year}</p>
+                <div className={`ball w-10 h-10 border-4 border-red-500 rounded-[200px] relative flex items-center justify-center ${isColored ? "" : ""} duration-0`}>
+                    <div className={`"smallball absolute w-5 h-5 ${isColored ? "bg-red-700" : ""} rounded-[200px] duration-300"`}>
                     </div>
                     {!isLast && <div className="line w-1 h-[100px] absolute bg-red-500 top -bottom-[120px]" name="viiva"></div>}
                 </div>

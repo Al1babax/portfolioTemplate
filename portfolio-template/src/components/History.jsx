@@ -1,9 +1,6 @@
 import { Timeline } from "../modals/Timeline.jsx";
 import { useState } from "react";
 export function History() {
-
-
-
   const timelinedata = {
     1: {
       id: 0,
@@ -20,7 +17,9 @@ export function History() {
       isLast: true,
     },
   }
+
   let timelineHTML = [];
+
   for (let i = 1; i <= Object.keys(timelinedata).length; i++) {
     timelineHTML.push(
       <Timeline
@@ -34,29 +33,52 @@ export function History() {
     );
   }
 
-
   return (
-
-
-    <div className="sidebar  w-full bg-red-600 h-[960px] flex items-start bg-opacity-75">
-      <div className="sidebar__content w-full flex justify-center gap-10 pt-20">
-        <div class="leftcontent bg-red-800 w-[700px]">
-          <h2 class="text-4xl font-medium px-">Experience</h2>
+    <div className="sidebar  w-full bg-neutral-800 h-[960px] flex items-center opacity-100 text-slate-300">
+      <div className="sidebar__content w-full flex justify-center gap-16 pt-20">
+        <div class="leftcontent bg-red-0 w-[750px]">
+          <h2 class="text-4xl font-medium text-red-400">Experience</h2>
           <div className="div flex flex-col">
             {timelineHTML}
           </div>
         </div>
-
-        <div className="rightcontent bg-red-400 w-[700px] flex flex-col gap-10">
-          <h2 class="text-4xl font-medium px-">Education</h2>
-          <h1 class="text-l font-helvetica">2019 - Write stuff here</h1>
-          <h3 class="text-4xl font-medium px-">Programming skills</h3>
-          <h1 class="text-l font-helvetica">2019 - Write stuff here</h1>
-          <h3 class="text-4xl font-medium px-">Something</h3>
-          <h1 class="text-l font-helvetica">2019 - Write stuff here</h1>
-          <h3 class="text-4xl font-medium px-">Something more</h3>
-          <h1 class="text-l font-helvetica">2019 - Write stuff here</h1>
-
+        <div className="rightcontent bg-red-0 w-[550px] flex flex-col gap-3 bg-neutral-0">
+          <div className="upper w-full h-full flex justify-evenly gap-3">
+            <div className="frontend w-full h-full bg-neutral-700 bg-opacity-40 rounded-2xl p-3 pl-5">
+              <p className="title text-3xl text-red-400">Frontend</p>
+              <ul className="text list-disc pl-4 pt-2">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+            <div className="frontend w-full h-full bg-neutral-700 bg-opacity-40 rounded-2xl p-3 pl-5">
+              <p className="title text-3xl text-red-400">Backend</p>
+              <ul className="text list-disc pl-4 pt-2">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+          </div>
+          <div className="lower w-full h-full flex justify-evenly gap-3">
+          <div className="frontend w-full h-full bg-neutral-700 bg-opacity-40 rounded-2xl p-3 pl-5">
+              <p className="title text-3xl text-red-400">Others</p>
+              <ul className="text list-disc pl-4 pt-2">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+            <div className="frontend w-full h-full bg-neutral-700 bg-opacity-40 rounded-2xl p-3 pl-5">
+              <p className="title text-3xl text-red-400">Languages</p>
+              <ul className="text list-disc pl-4 pt-2">
+                <li>English</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

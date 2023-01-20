@@ -88,7 +88,7 @@ export function Sidebar() {
   const infoValueCSS = "text-white -mt-1";
 
   return (
-    <div className="sidebar min-w-[470px] bg-neutral-700 h-screen sticky top-0">
+    <div className="sidebar min-w-[380px] bg-neutral-700 h-screen sticky top-0">
       <Menu
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
@@ -107,8 +107,8 @@ export function Sidebar() {
         </button>
       </div>
       <div className="otherStuff bg-red-0 h-4/5 w-[65%] mx-auto mt-20">
-        <div className="pageNumber flex gap-2 items-center font-bold">
-          <p className={`${menuOpen ? "text-black opacity-20" : "text-red-400"} ${pageNumberPosition ? "-translate-x-1" : ""} duration-200 ease-in-out z-50`}>0{pageNumber}</p>
+        <div className="pageNumber flex gap-2 items-center justify-center font-bold">
+          <p className={`${menuOpen ? "text-black opacity-[65%]" : "text-red-400"} ${pageNumberPosition ? "-translate-x-1" : ""} duration-400 ease-in-out z-50`}>0{pageNumber}</p>
           <div className="line h-1 w-28 bg-white rounded z-50"></div>
           <p className="text-white z-50">04</p>
         </div>
@@ -126,7 +126,7 @@ export function Sidebar() {
         <div className="bigPageNumber w-full flex justify-center bg-green-0 mt-16 relative bg-green">
           <p className={`text-[160px] font-bold  tracking-[-1rem] ${menuOpen ? "font-outline-6 text-red-400" : "font-outline-4 text-neutral-700"} z-40 duration-1000 ease-in-out`}>0{pageNumber}</p>
         </div>
-        <div className={`arrow absolute ${menuOpen ? "right-10" : "bg-neutral-700 -right-[47px]"} w-[100px] h-[135px] bottom-5 rounded-[150px] flex justify-center items-end z-50 duration-1000`}>
+        <div className={`arrow absolute ${menuOpen ? "right-2" : "bg-neutral-700 -right-[47px]"} w-[100px] h-[135px] bottom-5 rounded-[150px] flex justify-center items-end z-50 duration-1000`}>
             <img src={downArrow} alt="" className="w-[100px] h-[100px] invert animate-bounce z-50" />
         </div>
       </div>
