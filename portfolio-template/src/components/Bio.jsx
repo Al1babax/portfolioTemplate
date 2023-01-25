@@ -41,7 +41,7 @@ export function Bio(props) {
           </a>
         </div>
       </div>
-      {true && <div className="photo bg-slate-400 right-0 w-0 md:w-full h-full z-0 flex justify-center items-center bg-profile-image bg-cover">
+      {true && <div className="photo bg-slate-400 right-0 w-0 md:w-full z-10 flex justify-center items-center bg-profile-image bg-cover">
       </div>}
     </div>
   );
