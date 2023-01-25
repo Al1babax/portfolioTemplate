@@ -24,10 +24,10 @@ export function LandingPage() {
     console.log("ran handleResize")
   }
 
-  console.log("bio height: " + componentHeights.bio)
-  console.log("projects height: " + componentHeights.projects)
-  console.log("history height: " + componentHeights.history)
-  console.log("contact height: " + componentHeights.contact)
+  // console.log("bio height: " + componentHeights.bio)
+  // console.log("projects height: " + componentHeights.projects)
+  // console.log("history height: " + componentHeights.history)
+  // console.log("contact height: " + componentHeights.contact)
 
   return (
     <div className="landing-page sm:flex bg-red-0">

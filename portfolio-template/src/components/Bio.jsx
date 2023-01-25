@@ -18,7 +18,7 @@ export function Bio(props) {
     }, [ref.current]);
 
   return (
-    <div className="Bio bg-red-100 bg-opacity-[30%] w-full flex h-screen relative" ref={ref}>
+    <div className="Bio bg-red-100 bg-opacity-[30%] w-full flex relative py-24" ref={ref}>
       <div className="info bg-red-0 w-full sm:w-[700px] flex flex-col gap-16 justify-center px-10 text-xl z-10 pr-[70px]">
         <div className="hello bg-sky-0 z-10">
           <p className="text-stone-600 text-3xl">Hello. My name is</p>

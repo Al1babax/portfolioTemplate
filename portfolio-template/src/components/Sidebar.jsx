@@ -22,13 +22,13 @@ export function Sidebar(props) {
 
   // Handle the window resize
   function handleResize() {
+    console.log("Ran handleResize")
     setScreenWidth(window.innerWidth);
     setScreenHeight(window.innerHeight);
   }
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    handleResize();
   }, [window.innerWidth, window.innerHeight]);
 
 
@@ -74,7 +74,7 @@ export function Sidebar(props) {
   }
 
   // Logging states for debugging
-  //console.log("screenWidth: ", screenWidth);
+  console.log("screenWidth: ", screenWidth);
   //console.log("screenHeight: ", screenHeight);
   // console.log("yscroll: ", yscroll);
   // console.log("pageNumber: ", pageNumber);
