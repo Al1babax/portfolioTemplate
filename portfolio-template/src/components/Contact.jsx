@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 
-export function Contact() {
+export function Contact(props) {
+  const { componentHeights, handleResize } = props;
+
+  const ref = useRef(null);
+
+    useEffect(() => {
+        handleResize("contact", ref.current.offsetHeight)
+        const handleResize2 = () => {
+            handleResize("contact", ref.current.offsetHeight)
+        }
+        window.addEventListener("resize", handleResize2);
+        return () => window.removeEventListener("resize", handleResize2);
+    }, [ref.current]);
 
   const [message, setMessage] = useState({
     name: "",
@@ -14,8 +26,8 @@ export function Contact() {
 
 
   return (
-    <div className="sidebar w-full bg-neutral-800 h-[960px] flex justify-between flex-col 2xl:flex-row py-36 px-36">
-      <div className="leftContent h-full w-[400px] bg-yellow-0 flex flex-col gap-14 text-slate-300">
+    <div className="sidebar w-full bg-neutral-800 flex justify-between flex-col 2xl:flex-row py-36 px-36 items-center gap-24 2xl:gap-0" ref={ref}>
+      <div className="leftContent h-full sm:w-[400px] bg-yellow-0 flex flex-col gap-14 text-slate-300">
         <p className="text-3xl font-bold text-red-400">Get in touch</p>
         <p className="text-2xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra tristique placerat in massa consectetur quisque nunc fames.</p>
         <p>Magni dolores eos qui sed quia consequuntur ratione voluptatem sequi nesciunt permano Nence of the stars from which we spring muse about as a patch of light billions upon billions.</p>
@@ -35,7 +47,7 @@ export function Contact() {
           </div>
         </div>
       </div>
-      <div className="rightContent h-[93%] w-[600px] bg-neutral-700 rounded-[50px] flex items-center justify-center">
+      <div className="rightContent h-[600px] w-[375px] sm:w-[600px] bg-neutral-700 sm:rounded-[50px] flex items-center justify-center">
         <form action="" className="flex flex-col gap-10 items-center justify-center w-[85%]">
           <input
             type="text"
@@ -44,7 +56,7 @@ export function Contact() {
             value={message.name}
             onChange={(e) => setMessage({ ...message, name: e.target.value })}
             placeholder="Name"
-            className="w-4/5 h-12 rounded bg-neutral-800 text-slate-300 border border-neutral-700 focus:outline-none focus:border-red-400 px-4"
+            className="w-full sm:w-4/5 h-12 rounded bg-neutral-800 text-slate-300 border border-neutral-700 focus:outline-none focus:border-red-400 px-4"
           />
           <input
             type="email"
@@ -53,7 +65,7 @@ export function Contact() {
             value={message.email}
             onChange={(e) => setMessage({ ...message, email: e.target.value })}
             placeholder="Email"
-            className="w-4/5 h-12 rounded bg-neutral-800 text-slate-300 border border-neutral-700 focus:outline-none focus:border-red-400 px-4"
+            className="w-full sm:w-4/5 h-12 rounded bg-neutral-800 text-slate-300 border border-neutral-700 focus:outline-none focus:border-red-400 px-4"
           />
           <input
             type="text"
@@ -62,7 +74,7 @@ export function Contact() {
             value={message.subject}
             onChange={(e) => setMessage({ ...message, subject: e.target.value })}
             placeholder="Subject"
-            className="w-4/5 h-12 rounded bg-neutral-800 text-slate-300 border border-neutral-700 focus:outline-none focus:border-red-400 px-4"
+            className="w-full sm:w-4/5 h-12 rounded bg-neutral-800 text-slate-300 border border-neutral-700 focus:outline-none focus:border-red-400 px-4"
           />
           <textarea
             name="message"
@@ -72,11 +84,11 @@ export function Contact() {
             cols="30"
             rows="10"
             placeholder="Message"
-            className="w-4/5 h-32 rounded bg-neutral-800 text-slate-300 border border-neutral-700 focus:outline-none focus:border-red-400 px-4 py-2 resize-none"
+            className="w-full sm:w-4/5 h-32 rounded bg-neutral-800 text-slate-300 border border-neutral-700 focus:outline-none focus:border-red-400 px-4 py-2 resize-none"
           ></textarea>
           <button
             type="submit"
-            className="w-4/5 h-12 rounded bg-red-400 text-neutral-800 font-bold hover:bg-red-500 transition duration-300"
+            className="w-full sm:w-4/5 h-12 rounded bg-red-400 text-neutral-800 font-bold hover:bg-red-500 transition duration-300"
           >
             Send Message
           </button>

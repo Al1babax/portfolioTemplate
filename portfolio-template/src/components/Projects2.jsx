@@ -1,14 +1,29 @@
 import { ProjectCard } from "../modals/ProjectCard"
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SingleProject } from "../modals/SingleProject";
 import test1 from "../resources/images/test1.jpeg";
 import test2 from "../resources/images/test2.jpeg";
 import test3 from "../resources/images/test3.jpeg";
+import { useEffect } from "react";
 
 
-export function Projects2() {
+export function Projects2(props) {
+    // deconstruct props
+    const { componentHeights, handleResize } = props;
+
     const [projectNumber, setProjectNumber] = useState(1);
     const [projectOpen, setProjectOpen] = useState(false);
+
+    const ref = useRef(null);
+
+    useEffect(() => {
+        handleResize("projects", ref.current.offsetHeight)
+        const handleResize2 = () => {
+            handleResize("projects", ref.current.offsetHeight)
+        }
+        window.addEventListener("resize", handleResize2);
+        return () => window.removeEventListener("resize", handleResize2);
+    }, [ref.current]);
 
 
     const projects = {
@@ -108,7 +123,7 @@ export function Projects2() {
 
 
     return (
-        <div className="sidebar w-full bg-neutral-800 h-[960px] flex justify-center items-center z-30 overflow-hidden">
+        <div className="sidebar w-full bg-neutral-800 py-24 flex justify-center items-center z-30 overflow-hidden" ref={ref}>
             {
                 projectOpen && <SingleProject
                     id={projects[projectNumber].id}
@@ -123,9 +138,10 @@ export function Projects2() {
                     images={projects[projectNumber].images}
                 />
             }
-            <div className={`projects bg-green-0 grid grid-cols-3 grid-rows-2 gap-5 ${projectOpen ? "-translate-x-[2000px]" : ""} duration-500 ease-in-out`}>
+            {!projectOpen && <div className={`projects bg-green-0 grid lg:grid-cols-2 lg:grid-rows-3  3xl:grid-cols-3 3xl:grid-rows-2 gap-5 ${projectOpen ? "-translate-x-[2000px]" : ""} duration-500 ease-in-out`}>
                 {projectsHTML}
-            </div>
+            </div>}
+
         </div >
     )
 }

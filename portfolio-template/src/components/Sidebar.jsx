@@ -2,7 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { Menu } from "../modals/Menu";
 import downArrow from "../resources/images/Transfer_long_down@3x.png";
 
-export function Sidebar() {
+export function Sidebar(props) {
+  // deconstruct props
+  const { componentHeights } = props;
+
   // Setup all the states
   const [menuAnimation, setMenuAnimation] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,10 +43,6 @@ export function Sidebar() {
       setPageNumber(3);
     } else if (yscroll > 960 * 2.5 && yscroll < 960 * 3.5) {
       setPageNumber(4);
-    } else if (yscroll > 960 * 3.5 && yscroll < 960 * 4.5) {
-      setPageNumber(5);
-    } else if (yscroll > 960 * 2.5 && yscroll < 960 * 3) {
-      setPageNumber(6);
     }
   }
 
@@ -88,12 +87,12 @@ export function Sidebar() {
   const infoValueCSS = "text-white -mt-1";
 
   return (
-    <div className="sidebar min-w-[75px] bg-neutral-700 h-screen sticky top-0 2xl:min-w-[380px]">
+    <div className="sidebar min-w-[75px] bg-neutral-700 md:h-screen sticky top-0 2xl:min-w-[380px] z-50">
       <Menu
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
       />
-      <div className="menu m-8">
+      <div className="menu flex bg-red-0 justify-end px-4 py-4 md:m-8 z-30">
         <button className="flex flex-col gap-1 bg-red-0 w-8 h-5 z-0 bg-green-0" onMouseEnter={toggleMenu} onMouseLeave={toggleMenu} onClick={openMenu}>
           <div
             className={`line1 h-1 w-6 bg-white ${menuAnimation ? "translate-x-2" : ""} duration-300 ease-in-out transform`}
